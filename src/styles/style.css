@@ -1,0 +1,7 @@
+.tg__body {
+    background-image: url(../assets/images/background-desktop.png);
+    background-position: center center;
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}

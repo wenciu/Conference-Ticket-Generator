@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Conference ticket generator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <title>Conference ticket generator</title>
 </head>
-<body>
 
-  <!-- Form starts -->
+<body class="tg__body">
+  <main class="tg__main">
+    <!-- Intro Section -->
+    <section class="tg__intro">
+      <h1 class="tg__intro__heading">Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p class="tg__intro__description">Secure your spot at next year's biggest coding conference.</p>
+    </section>
 
-  Your Journey to Coding Conf 2025 Starts Here!
+    <!-- Form Section -->
+    <section class="tg__form">
+      <form id="ticketForm">
+        <!-- Upload Section -->
+        <div class="tg__form__upload">
+          <label for="avatar" class="tg__form__upload-label">Upload Avatar:</label>
+          <input type="file" id="avatar" class="tg__form__upload-input" accept=".jpg, .png" max-size="500KB">
+          <p class="tg__form__upload-description">Drag and drop or click to upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
 
-  Secure your spot at next year's biggest coding conference.
+        <!-- User Information Section -->
+        <div class="tg__form__user">
+          <label for="fullName" class="tg__form__user-name-label">Full Name:</label>
+          <input type="text" id="fullName" class="tg__form__user-name-input" required>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
+          <label for="email" class="tg__form__user-email-label">Email Address:</label>
+          <input type="email" id="email" class="tg__form__user-email-input" placeholder="example@email.com" required>
 
-  Full Name
+          <label for="githubUsername" class="tg__form__user-github-label">GitHub Username:</label>
+          <input type="text" id="githubUsername" class="tg__form__user-github-input" placeholder="@yourusername" required>
+        </div>
 
-  Email Address
-  example@email.com
+        <button class="tg__form__user-submit" type="submit">Generate My Ticket</button>
+      </form>
+    </section>
 
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
-  <!-- Form ends -->
-
-  <!-- Generated tickets starts -->
-
-  Congrats, <!-- Full Name -->! Your ticket is ready.
-
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
-  <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <!-- Generated Ticket Section -->
+    <section id="generatedTicket" class="tg__generated-ticket">
+      <h2 class="tg__generated-ticket__heading">Congratulations!</h2>
+      <p class="tg__generated-ticket__message">Congrats, <span id="generatedName"></span>! Your ticket is ready.</p>
+      <p class="tg__generated-ticket__email-message">We've emailed your ticket to <span id="generatedEmail"></span> and will send updates in the run-up to the
+        event.</p>
+      <p class="tg__generated-ticket__event-details">Coding Conf, Jan 31, 2025 / Austin, TX</p>
+    </section>
+  </main>
 </body>
 </html>
